@@ -1,12 +1,15 @@
+Aqui está o código completo do arquivo index_lainex_final (1).html.
+
+Você pode copiá-lo integralmente, salvar em um arquivo com a extensão .html (por exemplo, index.html) e subir diretamente para o seu repositório do GitHub (usando o GitHub Pages, por exemplo, para colocá-lo no ar):
+
+HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Lainex | Consultoria Online e Presencial</title>
   <meta name="description" content="Consultoria online e presencial com treino e dieta personalizada. Comece com 7 dias grátis." />
-
   <style>
     :root {
       --bg: #060814;
@@ -20,17 +23,8 @@
       --shadow: 0 24px 80px rgba(0,0,0,.45);
       --radius: 26px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -42,818 +36,551 @@
         linear-gradient(180deg, #050710 0%, #070a16 100%);
       min-height: 100vh;
     }
-
     body:before {
       content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .35;
+      position: fixed; inset: 0; pointer-events: none; opacity: .35;
       background-image:
         linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
       background-size: 44px 44px;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 72%);
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1140px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1140px, calc(100% - 32px)); margin: 0 auto; }
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 40;
+      position: sticky; top: 0; z-index: 40;
       backdrop-filter: blur(16px);
       background: rgba(5,7,16,.72);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-
     .nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
-
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: .6px;
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 900; letter-spacing: .6px; text-transform: uppercase;
     }
-
     .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
-      color: white;
-      font-weight: 900;
-      font-size: 22px;
-      box-shadow: 0 0 14px rgba(17,220,255,.22), 0 0 18px rgba(255,56,220,.16);
+      width: 46px; height: 46px; object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(17,220,255,.22)) drop-shadow(0 0 18px rgba(255,56,220,.16));
     }
-
-    .brand-text {
-      font-size: 21px;
-    }
-
+    .brand-text { font-size: 21px; }
     .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
+      display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 14px;
     }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
+    .nav-links a:hover { color: white; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      border: 0;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 15px 24px;
-      font-weight: 800;
-      text-align: center;
-      transition: .2s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      border: 0; cursor: pointer; border-radius: 999px; padding: 15px 24px;
+      font-weight: 800; text-align: center; transition: .2s ease;
     }
-
     .btn-primary {
       color: white;
       background: linear-gradient(135deg, var(--cyan), var(--purple) 52%, var(--pink));
       box-shadow: 0 0 24px rgba(17,220,255,.18), 0 18px 40px rgba(0,0,0,.35);
     }
-
     .btn-primary:hover {
       transform: translateY(-2px);
       filter: brightness(1.05);
       box-shadow: 0 0 28px rgba(17,220,255,.24), 0 22px 52px rgba(0,0,0,.42);
     }
-
     .btn-ghost {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
-      color: white;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); color: white;
     }
-
-    .btn-ghost:hover {
-      background: rgba(255,255,255,.09);
-    }
-
-    .hero {
-      padding: 86px 0 62px;
-    }
-
+    .btn-ghost:hover { background: rgba(255,255,255,.09); }
+    .hero { padding: 86px 0 62px; }
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 42px;
-      align-items: center;
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 42px; align-items: center;
     }
-
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 14px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(17,220,255,.30);
-      background: rgba(17,220,255,.08);
-      font-size: 13px;
-      font-weight: 800;
-      color: #defbff;
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; margin-bottom: 18px;
+      border-radius: 999px; border: 1px solid rgba(17,220,255,.30);
+      background: rgba(17,220,255,.08); font-size: 13px; font-weight: 800; color: #defbff;
     }
-
     .hero h1 {
-      font-size: clamp(42px, 6.4vw, 80px);
-      line-height: .94;
-      letter-spacing: -3px;
-      margin-bottom: 20px;
+      font-size: clamp(42px, 6.4vw, 80px); line-height: .94; letter-spacing: -3px; margin-bottom: 20px;
     }
-
     .gradient-text {
       background: linear-gradient(90deg, var(--cyan), white 48%, var(--pink));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-
     .hero p {
-      max-width: 700px;
-      color: var(--muted);
-      font-size: clamp(17px, 2vw, 21px);
-      margin-bottom: 26px;
+      max-width: 700px; color: var(--muted); font-size: clamp(17px, 2vw, 21px); margin-bottom: 26px;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .microcopy { color: var(--muted); font-size: 14px; }
     .hero-card {
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.035));
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 32px;
-      padding: 26px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.10); border-radius: 32px; padding: 26px;
+      box-shadow: var(--shadow); position: relative; overflow: hidden;
     }
-
     .hero-card:before {
-      content: "";
-      position: absolute;
-      inset: -100px -70px auto auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
+      content: ""; position: absolute; inset: -100px -70px auto auto;
+      width: 220px; height: 220px; border-radius: 50%;
       background: conic-gradient(var(--cyan), var(--pink), var(--purple), var(--cyan));
-      opacity: .35;
-      filter: blur(24px);
+      opacity: .35; filter: blur(24px);
     }
-
-    .results-carousel {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      width: 100%;
+    .hero-visual {
+      height: 330px; border-radius: 26px; border: 1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.06), transparent 18%),
+        radial-gradient(circle at 40% 45%, rgba(17,220,255,.18), transparent 30%),
+        radial-gradient(circle at 60% 45%, rgba(255,56,220,.18), transparent 30%),
+        linear-gradient(135deg, rgba(11,18,34,.55), rgba(28,15,44,.50));
+      display: grid; place-items: center; overflow: hidden; position: relative;
     }
-
-    .results-slider {
-      flex: 1;
-      display: flex;
-      overflow-x: auto;
-      overflow-y: hidden;
-      gap: 14px;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      -webkit-overflow-scrolling: touch;
-      border-radius: 24px;
+    .hero-visual:after {
+      content: ""; position: absolute; inset: 18px; border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,0));
+      border: 1px solid rgba(255,255,255,.04); pointer-events: none;
     }
-
-    .results-slider::-webkit-scrollbar {
-      display: none;
+    .hero-logo {
+      width: min(86%, 330px); height: auto; object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(17,220,255,.15)) drop-shadow(0 0 22px rgba(255,56,220,.15));
+      position: relative; z-index: 2;
     }
-
-    .result-slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-      margin: 0;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.11);
-      background: rgba(255,255,255,.04);
-      box-shadow: 0 18px 42px rgba(0,0,0,.26);
-    }
-
-    .result-slide img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      background: rgba(255,255,255,.04);
-    }
-
-    .result-slide figcaption {
-      padding: 10px 14px 12px;
-      text-align: center;
-      font-size: 18px;
-      font-weight: 900;
-      color: #fff;
-      background: rgba(0,0,0,.44);
-    }
-
-    .photo-arrow {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.10);
-      color: #ffffff;
-      font-size: 26px;
-      font-weight: 900;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-      z-index: 5;
-      transition: .2s ease;
-    }
-
-    .photo-arrow:hover {
-      background: rgba(255,255,255,.18);
-      transform: translateY(-1px);
-    }
-
-    .mini-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
+    .mini-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
     .mini-card {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.09);
-      border-radius: 18px;
-      padding: 15px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+      border-radius: 18px; padding: 15px;
     }
-
-    .mini-card strong {
-      display: block;
-      font-size: 19px;
-      margin-bottom: 2px;
-    }
-
-    .mini-card small {
-      color: var(--muted);
-    }
-
-    section {
-      padding: 68px 0;
-    }
-
-    .section-head {
-      max-width: 780px;
-      margin-bottom: 32px;
-    }
-
+    .mini-card strong { display: block; font-size: 19px; margin-bottom: 2px; }
+    .mini-card small { color: var(--muted); }
+    section { padding: 68px 0; }
+    .section-head { max-width: 780px; margin-bottom: 32px; }
     .section-head h2 {
-      font-size: clamp(30px, 4vw, 50px);
-      line-height: 1.03;
-      letter-spacing: -1.5px;
-      margin-bottom: 12px;
+      font-size: clamp(30px, 4vw, 50px); line-height: 1.03; letter-spacing: -1.5px; margin-bottom: 12px;
     }
-
-    .section-head p {
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
+    .section-head p { color: var(--muted); font-size: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 18px 48px rgba(0,0,0,.16);
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px; position: relative; overflow: hidden; box-shadow: 0 18px 48px rgba(0,0,0,.16);
     }
-
     .card:after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
+      content: ""; position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(135deg, rgba(17,220,255,.06), transparent 38%, rgba(255,56,220,.05));
     }
-
-    .card > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
-
-    .card p,
-    .card li {
-      color: var(--muted);
-    }
-
+    .card > * { position: relative; z-index: 2; }
+    .card h3 { font-size: 21px; margin-bottom: 10px; }
+    .card p, .card li { color: var(--muted); }
     .icon {
-      width: 46px;
-      height: 46px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      margin-bottom: 14px;
+      width: 46px; height: 46px; display: grid; place-items: center; border-radius: 16px; margin-bottom: 14px;
       background: linear-gradient(135deg, rgba(17,220,255,.18), rgba(255,56,220,.16));
       border: 1px solid rgba(255,255,255,.12);
     }
-
-    .steps {
-      counter-reset: step;
-    }
-
+    .steps { counter-reset: step; }
     .step:before {
-      counter-increment: step;
-      content: counter(step);
-      width: 36px;
-      height: 36px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      margin-bottom: 14px;
-      font-weight: 900;
-      color: white;
+      counter-increment: step; content: counter(step); width: 36px; height: 36px;
+      display: grid; place-items: center; border-radius: 50%; margin-bottom: 14px;
+      font-weight: 900; color: white;
       background: linear-gradient(135deg, var(--cyan), var(--pink));
       box-shadow: 0 0 20px rgba(17,220,255,.16);
     }
-
+    .team-photo-wrap {
+      border-radius: 34px; overflow: hidden; border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow); position: relative;
+      background: linear-gradient(135deg, rgba(9,15,32,.78), rgba(20,12,36,.78));
+    }
+    .team-photo {
+      width: 100%; display: block;
+    }
+    .team-photo-wrap:after {
+      content: ""; position: absolute; inset: auto 0 0 0; height: 120px;
+      background: linear-gradient(to top, rgba(6,8,20,.38), transparent);
+      pointer-events: none;
+    }
+    .photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .photo-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 28px;
+      overflow: hidden; box-shadow: 0 18px 48px rgba(0,0,0,.16);
+    }
+    .photo-card img {
+      width: 100%; height: 430px; object-fit: cover;
+    }
+    .photo-caption { padding: 18px 20px 20px; }
+    .photo-caption h3 { font-size: 22px; margin-bottom: 8px; }
+    .photo-caption p { color: var(--muted); }
     .offer {
       background:
         radial-gradient(circle at 20% 20%, rgba(17,220,255,.18), transparent 26%),
         radial-gradient(circle at 85% 20%, rgba(255,56,220,.18), transparent 26%),
         linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.11);
-      border-radius: 34px;
-      padding: clamp(28px, 5vw, 56px);
-      display: grid;
-      grid-template-columns: 1fr .76fr;
-      gap: 28px;
-      align-items: center;
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.11); border-radius: 34px; padding: clamp(28px, 5vw, 56px);
+      display: grid; grid-template-columns: 1fr .76fr; gap: 28px; align-items: center; box-shadow: var(--shadow);
     }
-
     .offer h2 {
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: .98;
-      letter-spacing: -2px;
-      margin-bottom: 16px;
+      font-size: clamp(36px, 5vw, 58px); line-height: .98; letter-spacing: -2px; margin-bottom: 16px;
     }
-
-    .offer p {
-      color: var(--muted);
-      font-size: 18px;
-      margin-bottom: 22px;
-    }
-
+    .offer p { color: var(--muted); font-size: 18px; margin-bottom: 22px; }
     .offer-box {
-      background: rgba(6,8,20,.56);
-      border: 1px solid rgba(255,255,255,.11);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(8px);
+      background: rgba(6,8,20,.56); border: 1px solid rgba(255,255,255,.11);
+      border-radius: 24px; padding: 24px; backdrop-filter: blur(8px);
     }
-
     .offer-box strong {
-      display: block;
-      font-size: 46px;
-      line-height: 1;
-      margin-bottom: 8px;
+      display: block; font-size: 46px; line-height: 1; margin-bottom: 8px;
       background: linear-gradient(90deg, var(--cyan), var(--pink));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-
-    .list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .list li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .list li:before {
-      content: "✓";
-      color: var(--cyan);
-      font-weight: 900;
-      flex: 0 0 auto;
-    }
-
-    .faq {
-      display: grid;
-      gap: 12px;
-    }
-
+    .list { list-style: none; display: grid; gap: 12px; }
+    .list li { display: flex; gap: 10px; align-items: flex-start; }
+    .list li:before { content: "✓"; color: var(--cyan); font-weight: 900; flex: 0 0 auto; }
+    .quote-section { display: grid; grid-template-columns: .88fr 1.12fr; gap: 18px; }
+    .quote { font-size: 24px; line-height: 1.16; font-weight: 900; letter-spacing: -.7px; }
+    .faq { display: grid; gap: 12px; }
     details {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding: 18px 20px;
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px; padding: 18px 20px;
     }
-
-    summary {
-      cursor: pointer;
-      font-weight: 800;
-    }
-
-    details p {
-      color: var(--muted);
-      margin-top: 10px;
-    }
-
-    .final-cta {
-      text-align: center;
-      padding: 76px 0 98px;
-    }
-
+    summary { cursor: pointer; font-weight: 800; }
+    details p { color: var(--muted); margin-top: 10px; }
+    .final-cta { text-align: center; padding: 76px 0 98px; }
     .final-cta h2 {
-      font-size: clamp(36px, 5vw, 62px);
-      line-height: .98;
-      letter-spacing: -2px;
-      margin-bottom: 16px;
+      font-size: clamp(36px, 5vw, 62px); line-height: .98; letter-spacing: -2px; margin-bottom: 16px;
     }
-
-    .final-cta p {
-      color: var(--muted);
-      max-width: 750px;
-      margin: 0 auto 26px;
-      font-size: 18px;
-    }
-
+    .final-cta p { color: var(--muted); max-width: 750px; margin: 0 auto 26px; font-size: 18px; }
     footer {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding: 26px 0;
-      color: var(--muted);
-      font-size: 14px;
+      border-top: 1px solid rgba(255,255,255,.08); padding: 26px 0; color: var(--muted); font-size: 14px;
     }
-
-    .footer-flex {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
+    .footer-flex { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .float-wa {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 50;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--cyan), var(--pink));
-      color: white;
-      font-weight: 900;
-      font-size: 20px;
-      box-shadow: 0 0 24px rgba(17,220,255,.22), 0 18px 48px rgba(0,0,0,.38);
+      position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 62px; height: 62px;
+      border-radius: 50%; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--cyan), var(--pink)); color: white;
+      font-weight: 900; font-size: 20px; box-shadow: 0 0 24px rgba(17,220,255,.22), 0 18px 48px rgba(0,0,0,.38);
       border: 2px solid rgba(255,255,255,.18);
+    }
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 56px; }
+      .hero-grid, .photo-grid, .offer, .quote-section { grid-template-columns: 1fr; }
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .hero h1 { letter-spacing: -2px; }
+      .btn { width: 100%; }
+      .mini-row { grid-template-columns: 1fr; }
+      .hero-visual { height: 280px; }
+      .brand-text { font-size: 18px; }
+      .photo-card img { height: auto; max-height: 420px; }
+    }
+  
+    /* RESULTADOS - CARROSSEL COM FOTOS EMBUTIDAS */
+    .brand {
+      text-transform: none;
+    }
+
+    .only-photos-card {
+      padding: 18px !important;
+    }
+
+    .only-photos {
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 14px !important;
+      background: transparent !important;
+      border: 0 !important;
+      overflow: visible !important;
+    }
+
+    .only-photos:after {
+      display: none !important;
+    }
+
+    .only-photos .results-slider {
+      width: 100% !important;
+      flex: 1 1 auto !important;
+      display: flex !important;
+      gap: 16px !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      padding: 0 !important;
+      cursor: grab !important;
+      -webkit-overflow-scrolling: touch !important;
+      position: relative !important;
+      z-index: 3 !important;
+    }
+
+    .only-photos .results-slider::-webkit-scrollbar {
+      display: none !important;
+    }
+
+    .only-photos .result-slide {
+      flex: 0 0 100% !important;
+      scroll-snap-align: center !important;
+      border-radius: 24px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255,255,255,.10) !important;
+      background: rgba(255,255,255,.04) !important;
+      box-shadow: 0 18px 42px rgba(0,0,0,.26) !important;
+      margin: 0 !important;
+    }
+
+    .only-photos .result-slide img {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 1 / 1 !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+
+    .only-photos .result-slide figcaption {
+      padding: 12px 14px 14px !important;
+      text-align: center !important;
+      font-size: 18px !important;
+      font-weight: 900 !important;
+      color: #ffffff !important;
+      background: rgba(0,0,0,.42) !important;
+      letter-spacing: .2px !important;
+    }
+
+    .photo-arrow {
+      width: 46px !important;
+      height: 46px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background: rgba(255,255,255,.10) !important;
+      color: #ffffff !important;
+      font-size: 30px !important;
+      font-weight: 900 !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex: 0 0 auto !important;
+      z-index: 5 !important;
+      transition: .2s ease !important;
+    }
+
+    .photo-arrow:hover {
+      background: rgba(255,255,255,.18) !important;
+      transform: translateY(-1px) !important;
     }
 
     @media (max-width: 920px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hero {
-        padding-top: 56px;
-      }
-
-      .hero-grid,
-      .offer {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-3,
-      .grid-4 {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .mini-row {
-        grid-template-columns: 1fr;
-      }
-
-      .results-carousel {
-        gap: 8px;
+      .only-photos {
+        gap: 8px !important;
       }
 
       .photo-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 22px;
-      }
-
-      .brand-text {
-        font-size: 18px;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 24px !important;
       }
     }
+
   </style>
 </head>
-
 <body>
   <script>
-    const GRUPO_VIP_LINK = "https://chat.whatsapp.com/Gg24Ngypev1DPZgSnRnjME?mode=gi_t";
+    const WHATSAPP_NUMBER = "5511948542171";
+    const MESSAGE = "Quero começar meus 7 dias grátis da Lainex";
+    const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MESSAGE)}`;
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("[data-whatsapp], [data-vip]").forEach(el => {
-        el.href = GRUPO_VIP_LINK;
-        el.target = "_blank";
-        el.rel = "noopener noreferrer";
-      });
+      document.querySelectorAll("[data-whatsapp]").forEach(el => el.href = WHATSAPP_LINK);
 
-      document.querySelectorAll("[data-carousel]").forEach(carousel => {
-        const slider = carousel.querySelector("[data-results-slider]");
-        const prev = carousel.querySelector("[data-slider-prev]");
-        const next = carousel.querySelector("[data-slider-next]");
+      const slider = document.querySelector("[data-results-slider]");
+      const prev = document.querySelector("[data-slider-prev]");
+      const next = document.querySelector("[data-slider-next]");
 
-        if (slider) {
-          const scrollStep = () => slider.clientWidth + 14;
+      if (slider) {
+        const scrollStep = () => slider.clientWidth + 16;
 
-          prev?.addEventListener("click", () => {
-            slider.scrollBy({ left: -scrollStep(), behavior: "smooth" });
-          });
+        prev?.addEventListener("click", () => {
+          slider.scrollBy({ left: -scrollStep(), behavior: "smooth" });
+        });
 
-          next?.addEventListener("click", () => {
-            slider.scrollBy({ left: scrollStep(), behavior: "smooth" });
-          });
-        }
-      });
+        next?.addEventListener("click", () => {
+          slider.scrollBy({ left: scrollStep(), behavior: "smooth" });
+        });
+      }
     });
   </script>
 
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#">
-        <div class="brand-mark">L</div>
+        <img class="brand-mark" src="data:image/png;base64,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" />
         <span class="brand-text">Lainex</span>
       </a>
-
       <nav class="nav-links">
-        <a href="#beneficios">Benefícios</a>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#gratis">7 dias grátis</a>
-        <a href="#duvidas">Dúvidas</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#metodo">O Método</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#perguntas">FAQ</a>
       </nav>
-
-      <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
+      <a class="btn btn-ghost" data-whatsapp href="#">Falar com Treinador</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
+    <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="badge">⚡ Consultoria online e presencial</div>
-
-          <h1>
-            Transformamos treino em
-            <span class="gradient-text">resultado real.</span>
-          </h1>
-
-          <p>
-            Treino e dieta personalizados para sua rotina, seu objetivo e seu nível atual.
-            Você recebe direção, acompanhamento e estratégia para sair do aleatório
-            e evoluir com constância.
-          </p>
-
+          <div class="badge">
+            <span>✦</span> 7 dias de experiência gratuita
+          </div>
+          <h1>Sua melhor versão tem <span class="gradient-text">estratégia.</span></h1>
+          <p>Consultoria fitness premium com inteligência e personalização. Treino e planejamento alimentar integrados para quem busca evolução real.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
-            <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
+            <a class="btn btn-primary" data-whatsapp href="#">Começar 7 dias grátis</a>
+            <a class="btn btn-ghost" href="#metodo">Conhecer o método</a>
           </div>
+          <span class="microcopy">Sem cartão de crédito. Sem pegadinhas.</span>
         </div>
-
         <div class="hero-card">
-          <div class="results-carousel" data-carousel>
-            <button class="photo-arrow" type="button" data-slider-prev aria-label="Foto anterior">‹</button>
-
-            <div class="results-slider" data-results-slider>
-              <figure class="result-slide">
-                <img src="resultado-1.png" alt="Resultado Lainex 1" loading="eager">
-                <figcaption>Resultados</figcaption>
-              </figure>
-
-              <figure class="result-slide">
-                <img src="resultado-2.png" alt="Resultado Lainex 2" loading="eager">
-                <figcaption>Resultados</figcaption>
-              </figure>
-
-              <figure class="result-slide">
-                <img src="resultado-3.png" alt="Resultado Lainex 3" loading="eager">
-                <figcaption>Resultados</figcaption>
-              </figure>
-
-              <figure class="result-slide">
-                <img src="resultado-4.png" alt="Resultado Lainex 4" loading="eager">
-                <figcaption>Resultados</figcaption>
-              </figure>
-            </div>
-
-            <button class="photo-arrow" type="button" data-slider-next aria-label="Próxima foto">›</button>
+          <div class="hero-visual">
+            <img class="hero-logo" src="data:image/png;base64,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" alt="Lainex Logo" />
           </div>
-
           <div class="mini-row">
             <div class="mini-card">
               <strong>Treino</strong>
-              <small>personalizado</small>
+              <small>Foco no seu objetivo</small>
             </div>
-
             <div class="mini-card">
               <strong>Dieta</strong>
-              <small>direcionada</small>
+              <small>Cálculo de macros exato</small>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="beneficios">
+    <section id="solucoes">
       <div class="container">
         <div class="section-head">
-          <h2>Para quem quer resultado, não só motivação.</h2>
-          <p>
-            A Lainex foi criada para quem precisa de um plano claro,
-            possível de seguir e adaptado à própria realidade.
-          </p>
+          <h2>Planejamento completo para sua evolução</h2>
+          <p>Esqueça treinos prontos de gaveta e dietas restritivas impossíveis de seguir. Nosso ecossistema entrega o que você realmente precisa.</p>
         </div>
-
         <div class="grid-3">
           <div class="card">
-            <div class="icon">💪</div>
-            <h3>Ganho de massa</h3>
-            <p>Treino estruturado, progressão e estratégia para evoluir com mais consistência.</p>
+            <div class="icon">🏋️‍♂️</div>
+            <h3>Treino Customizado</h3>
+            <p>Divisão e volume de treino calculados para a sua rotina, nível atual de condicionamento e limitações físicas.</p>
           </div>
-
           <div class="card">
-            <div class="icon">🔥</div>
-            <h3>Emagrecimento</h3>
-            <p>Treino e dieta pensados para sua rotina, sem depender de tentativa e erro.</p>
+            <div class="icon">🍎</div>
+            <h3>Ajuste Alimentar</h3>
+            <p>Protocolo focado nos seus gostos, objetivos e bolso. Macros batidos sem abrir mão do que você gosta de comer.</p>
           </div>
-
           <div class="card">
-            <div class="icon">🎯</div>
-            <h3>Recomeço com direção</h3>
-            <p>Ideal para quem começa e para toda hora, ou não sabe exatamente o que fazer.</p>
+            <div class="icon">📱</div>
+            <h3>Suporte Diário</h3>
+            <p>Canal direto no WhatsApp para tirar dúvidas sobre execução de exercícios, substituição de alimentos e ajustes rápidos.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona">
+    <section id="metodo" class="steps">
       <div class="container">
         <div class="section-head">
-          <h2>Como funciona</h2>
-          <p>Um processo simples para sair do aleatório e começar com acompanhamento de verdade.</p>
+          <h2>Como funcionam os 7 dias grátis?</h2>
+          <p>Passo a passo simples para você experimentar a metodologia que vai transformar o seu corpo.</p>
         </div>
-
-        <div class="grid-4 steps">
+        <div class="grid-4">
+          <div class="card step">
+            <h3>Inscrição Rápida</h3>
+            <p>Você clica nos botões da página e inicia sua conversa sem burocracia.</p>
+          </div>
           <div class="card step">
             <h3>Anamnese</h3>
-            <p>Entendemos seu objetivo, rotina, alimentação, limitações e dificuldades.</p>
+            <p>Preenche nosso formulário detalhando sua rotina, objetivos, dores e preferências.</p>
           </div>
-
           <div class="card step">
-            <h3>Plano personalizado</h3>
-            <p>Você recebe treino e dieta adaptados para sua realidade.</p>
+            <h3>Entrega do Plano</h3>
+            <p>Em até 48 horas seu treino e planejamento inicial são estruturados.</p>
           </div>
-
           <div class="card step">
             <h3>Acompanhamento</h3>
-            <p>Você envia retorno, tira dúvidas e recebe direção durante o processo.</p>
-          </div>
-
-          <div class="card step">
-            <h3>Ajustes</h3>
-            <p>O plano evolui conforme sua resposta, rotina e progresso.</p>
+            <p>Você testa por uma semana inteira com suporte ativo antes de tomar qualquer decisão.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="gratis">
-      <div class="container">
-        <div class="offer">
-          <div>
-            <h2>Comece por 7 dias grátis.</h2>
-            <p>
-              Durante 7 dias, você vai sentir na prática a diferença entre seguir qualquer treino
-              e ter um plano com direção, estratégia e acompanhamento.
-            </p>
-
-            <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
-          </div>
-
-          <div class="offer-box">
-            <strong>7 dias</strong>
-            <p>Para testar a consultoria antes de decidir continuar.</p>
-
-            <ul class="list">
-              <li>Treino personalizado</li>
-              <li>Dieta direcionada</li>
-              <li>Acompanhamento</li>
-              <li>Suporte para dúvidas</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="duvidas">
+    <section id="resultados">
       <div class="container">
         <div class="section-head">
-          <h2>Dúvidas frequentes</h2>
-          <p>Veja as principais dúvidas antes de começar.</p>
+          <h2>Resultados Reais</h2>
+          <p>Pessoas comuns que decidiram treinar com direcionamento inteligente.</p>
+        </div>
+        
+        <div class="card only-photos-card">
+          <div class="only-photos">
+            <button class="photo-arrow" data-slider-prev aria-label="Anterior">‹</button>
+            <div class="results-slider" data-results-slider>
+              <figure class="result-slide">
+                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600&auto=format&fit=cover" alt="Resultado 1" />
+                <figcaption>Evolução de Definição</figcaption>
+              </figure>
+              <figure class="result-slide">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=cover" alt="Resultado 2" />
+                <figcaption>Ganho de Massa Magra</figcaption>
+              </figure>
+              <figure class="result-slide">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=cover" alt="Resultado 3" />
+                <figcaption>Emagrecimento Sustentável</figcaption>
+              </figure>
+            </div>
+            <button class="photo-arrow" data-slider-next aria-label="Próximo">›</button>
+          </div>
         </div>
 
+      </div>
+    </section>
+
+    <section id="oferta">
+      <div class="container offer">
+        <div>
+          <h2>Pronto para dar o primeiro passo?</h2>
+          <p>Não adie mais o físico e a saúde que você sabe que pode conquistar. Comece seu teste gratuito hoje mesmo.</p>
+          <ul class="list">
+            <li>Anamnese e diagnóstico inicial completo</li>
+            <li>Montagem de treino sob medida para o seu cenário</li>
+            <li>Orientação de macros e calorias ideal</li>
+            <li>Suporte para dúvidas durante o período</li>
+          </ul>
+        </div>
+        <div class="offer-box">
+          <strong>7 Dias Grátis</strong>
+          <p>Experimente sem compromisso e veja como funciona o acompanhamento profissional de verdade.</p>
+          <a class="btn btn-primary" data-whatsapp href="#">Quero minha vaga grátis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="perguntas">
+      <div class="container">
+        <div class="section-head">
+          <h2>Perguntas Frequentes</h2>
+        </div>
         <div class="faq">
           <details>
-            <summary>Os 7 dias são realmente grátis?</summary>
-            <p>Sim. Você entra na experiência gratuita para conhecer o acompanhamento na prática.</p>
+            <summary>Como funciona a consultoria?</summary>
+            <p>Após a coleta de informações sobre sua rotina, objetivos e histórico, montamos um planejamento exclusivo de treino e/ou dieta. Você executa e conta com nosso suporte contínuo.</p>
           </details>
-
           <details>
-            <summary>O treino é personalizado?</summary>
-            <p>Sim. O treino é pensado de acordo com seu objetivo, rotina, nível atual e limitações.</p>
+            <summary>É online ou presencial?</summary>
+            <p>A Lainex trabalha com atendimento online e presencial, conforme a necessidade e disponibilidade do aluno.</p>
           </details>
-
           <details>
-            <summary>Também tem dieta?</summary>
-            <p>Sim. A dieta é direcionada para sua rotina e objetivo.</p>
+            <summary>É para iniciante?</summary>
+            <p>Sim. O plano é montado conforme seu nível atual, seja iniciante, intermediário ou avançado.</p>
           </details>
-
           <details>
-            <summary>Serve para iniciante?</summary>
-            <p>Sim. A consultoria serve para quem está começando e para quem já treina.</p>
+            <summary>Os 7 dias são grátis mesmo?</summary>
+            <p>Sim. Você participa da experiência gratuita e depois decide se quer continuar.</p>
+          </details>
+          <details>
+            <summary>Vou receber um treino genérico?</summary>
+            <p>Não. O treino é baseado na sua anamnese, objetivo, rotina, nível e limitações.</p>
           </details>
         </div>
       </div>
@@ -861,24 +588,20 @@
 
     <section class="final-cta">
       <div class="container">
-        <h2>Pronto para sair do aleatório?</h2>
-        <p>
-          Entre no Grupo VIP e comece a experiência de 7 dias grátis com treino,
-          dieta e acompanhamento.
-        </p>
-
-        <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP agora</a>
+        <h2>Comece com direção. Evolua com estratégia.</h2>
+        <p>Entre nos 7 dias grátis da Lainex e veja na prática como treino e dieta personalizados podem mudar sua rotina.</p>
+        <a class="btn btn-primary" data-whatsapp href="#">Quero começar agora</a>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container footer-flex">
-      <span>© Lainex. Todos os direitos reservados.</span>
-      <span>Consultoria online e presencial</span>
+      <span>© 2026 Lainex — Consultoria</span>
+      <span>Treino personalizado • Dieta personalizada • Online e presencial</span>
     </div>
   </footer>
 
-  <a class="float-wa" data-vip href="#" aria-label="Entrar no Grupo VIP">VIP</a>
+  <a class="float-wa" data-whatsapp href="#" aria-label="Falar no WhatsApp">✦</a>
 </body>
 </html>
