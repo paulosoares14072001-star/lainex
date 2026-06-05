@@ -101,10 +101,15 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      object-fit: contain;
-      filter:
-        drop-shadow(0 0 14px rgba(17,220,255,.22))
-        drop-shadow(0 0 18px rgba(255,56,220,.16));
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+      font-size: 22px;
+      font-weight: 900;
+      color: white;
+      box-shadow:
+        0 0 14px rgba(17,220,255,.22),
+        0 0 18px rgba(255,56,220,.16);
     }
 
     .brand-text {
@@ -234,7 +239,7 @@
       filter: blur(24px);
     }
 
-    .hero-results {
+    .results-carousel {
       position: relative;
       z-index: 2;
       display: flex;
@@ -280,6 +285,7 @@
       aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
+      background: rgba(255,255,255,.04);
     }
 
     .result-slide figcaption {
@@ -577,7 +583,7 @@
         width: 100%;
       }
 
-      .hero-results {
+      .results-carousel {
         gap: 8px;
       }
 
@@ -596,41 +602,43 @@
 
 <body>
   <script>
-    const WHATSAPP_NUMBER = "5511948542171";
-    const MESSAGE = "Quero começar meus 7 dias grátis da Lainex";
-    const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MESSAGE)}`;
+    const GRUPO_VIP_LINK = "https://chat.whatsapp.com/Gg24Ngypev1DPZgSnRnjME?mode=gi_t";
 
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("[data-whatsapp]").forEach(el => el.href = WHATSAPP_LINK);
+      document.querySelectorAll("[data-vip]").forEach(el => {
+        el.href = GRUPO_VIP_LINK;
+      });
 
-      const slider = document.querySelector("[data-results-slider]");
-      const prev = document.querySelector("[data-slider-prev]");
-      const next = document.querySelector("[data-slider-next]");
+      document.querySelectorAll("[data-carousel]").forEach(carousel => {
+        const slider = carousel.querySelector("[data-results-slider]");
+        const prev = carousel.querySelector("[data-slider-prev]");
+        const next = carousel.querySelector("[data-slider-next]");
 
-      if (slider) {
-        const scrollStep = () => slider.clientWidth + 16;
+        if (slider) {
+          const scrollStep = () => slider.clientWidth + 16;
 
-        prev?.addEventListener("click", () => {
-          slider.scrollBy({
-            left: -scrollStep(),
-            behavior: "smooth"
+          prev?.addEventListener("click", () => {
+            slider.scrollBy({
+              left: -scrollStep(),
+              behavior: "smooth"
+            });
           });
-        });
 
-        next?.addEventListener("click", () => {
-          slider.scrollBy({
-            left: scrollStep(),
-            behavior: "smooth"
+          next?.addEventListener("click", () => {
+            slider.scrollBy({
+              left: scrollStep(),
+              behavior: "smooth"
+            });
           });
-        });
-      }
+        }
+      });
     });
   </script>
 
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#">
-        <img class="brand-mark" src="assets/logo.png" alt="Lainex">
+        <div class="brand-mark">L</div>
         <span class="brand-text">Lainex</span>
       </a>
 
@@ -642,7 +650,7 @@
         <a href="#duvidas">Dúvidas</a>
       </nav>
 
-      <a class="btn btn-primary" data-whatsapp href="#">Começar grátis</a>
+      <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
     </div>
   </header>
 
@@ -664,40 +672,40 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" data-whatsapp href="#">Quero meus 7 dias grátis</a>
+            <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
             <a class="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="hero-results">
-            <button class="photo-arrow photo-arrow-left" type="button" data-slider-prev aria-label="Foto anterior">
+          <div class="results-carousel" data-carousel>
+            <button class="photo-arrow" type="button" data-slider-prev aria-label="Foto anterior">
               ‹
             </button>
 
             <div class="results-slider" data-results-slider>
               <figure class="result-slide">
-                <img src="assets/resultado-1.png" alt="Resultado Lainex 1" loading="eager">
+                <img src="resultado-1.png" alt="Resultado Lainex 1" loading="eager">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-2.png" alt="Resultado Lainex 2" loading="eager">
+                <img src="resultado-2.png" alt="Resultado Lainex 2" loading="eager">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-3.png" alt="Resultado Lainex 3" loading="eager">
+                <img src="resultado-3.png" alt="Resultado Lainex 3" loading="eager">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-4.png" alt="Resultado Lainex 4" loading="eager">
+                <img src="resultado-4.png" alt="Resultado Lainex 4" loading="eager">
                 <figcaption>Resultados</figcaption>
               </figure>
             </div>
 
-            <button class="photo-arrow photo-arrow-right" type="button" data-slider-next aria-label="Próxima foto">
+            <button class="photo-arrow" type="button" data-slider-next aria-label="Próxima foto">
               ›
             </button>
           </div>
@@ -772,38 +780,38 @@
       <div class="container">
         <div class="section-head">
           <h2>Resultados reais</h2>
-          <p>Fotos de evolução de alunos acompanhados pela consultoria.</p>
+          <p>Arraste para o lado ou use as setas para ver mais fotos.</p>
         </div>
 
         <div class="hero-card">
-          <div class="hero-results">
-            <button class="photo-arrow photo-arrow-left" type="button" data-slider-prev-2 aria-label="Foto anterior">
+          <div class="results-carousel" data-carousel>
+            <button class="photo-arrow" type="button" data-slider-prev aria-label="Foto anterior">
               ‹
             </button>
 
-            <div class="results-slider" data-results-slider-2>
+            <div class="results-slider" data-results-slider>
               <figure class="result-slide">
-                <img src="assets/resultado-1.png" alt="Resultado Lainex 1">
+                <img src="resultado-1.png" alt="Resultado Lainex 1">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-2.png" alt="Resultado Lainex 2">
+                <img src="resultado-2.png" alt="Resultado Lainex 2">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-3.png" alt="Resultado Lainex 3">
+                <img src="resultado-3.png" alt="Resultado Lainex 3">
                 <figcaption>Resultados</figcaption>
               </figure>
 
               <figure class="result-slide">
-                <img src="assets/resultado-4.png" alt="Resultado Lainex 4">
+                <img src="resultado-4.png" alt="Resultado Lainex 4">
                 <figcaption>Resultados</figcaption>
               </figure>
             </div>
 
-            <button class="photo-arrow photo-arrow-right" type="button" data-slider-next-2 aria-label="Próxima foto">
+            <button class="photo-arrow" type="button" data-slider-next aria-label="Próxima foto">
               ›
             </button>
           </div>
@@ -820,7 +828,7 @@
               Durante 7 dias, você vai sentir na prática a diferença entre seguir qualquer treino
               e ter um plano com direção, estratégia e acompanhamento.
             </p>
-            <a class="btn btn-primary" data-whatsapp href="#">Entrar na experiência gratuita</a>
+            <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP</a>
           </div>
 
           <div class="offer-box">
@@ -873,10 +881,10 @@
       <div class="container">
         <h2>Pronto para sair do aleatório?</h2>
         <p>
-          Comece seus 7 dias grátis e entenda como treino, dieta e acompanhamento
-          podem acelerar sua evolução.
+          Entre no Grupo VIP e comece a experiência de 7 dias grátis com treino,
+          dieta e acompanhamento.
         </p>
-        <a class="btn btn-primary" data-whatsapp href="#">Quero começar agora</a>
+        <a class="btn btn-primary" data-vip href="#">Entrar no Grupo VIP agora</a>
       </div>
     </section>
   </main>
@@ -888,32 +896,6 @@
     </div>
   </footer>
 
-  <a class="float-wa" data-whatsapp href="#" aria-label="Falar no WhatsApp">WA</a>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const slider2 = document.querySelector("[data-results-slider-2]");
-      const prev2 = document.querySelector("[data-slider-prev-2]");
-      const next2 = document.querySelector("[data-slider-next-2]");
-
-      if (slider2) {
-        const scrollStep2 = () => slider2.clientWidth + 16;
-
-        prev2?.addEventListener("click", () => {
-          slider2.scrollBy({
-            left: -scrollStep2(),
-            behavior: "smooth"
-          });
-        });
-
-        next2?.addEventListener("click", () => {
-          slider2.scrollBy({
-            left: scrollStep2(),
-            behavior: "smooth"
-          });
-        });
-      }
-    });
-  </script>
+  <a class="float-wa" data-vip href="#" aria-label="Entrar no Grupo VIP">VIP</a>
 </body>
 </html>
